@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 4 - Interactive Profile</title>
+  <style>
+    body {
+      display: flex; justify-content: center; align-items: center;
+      height: 100vh; background: #fff8f2; font-family: Arial;
+    }
+    .profile {
+      text-align: center; background: white;
+      border-radius: 15px; padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    img { width: 120px; height: 120px; border-radius: 50%; }
+    button {
+      background: #ff7f50; border: none; color: white;
+      padding: 10px 20px; border-radius: 8px;
+      cursor: pointer; margin-top: 10px;
+    }
+    button:hover { background: #ff6347; }
+    #info { display: none; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-1/558827725_1985870832234516_6290776521658639026_n.jpg?_nc_cat=107&_nc_sid=e99d92&_nc_ohc=nZGsdAvCaNgQ7kNvwEwmyUY&_nc_ht=scontent.fcgy2-1.fna&oh=00_AfdqXpuxnblM9yJmAHya363M0QnekPCbDyq9ugy72dAN1w&oe=68F3AD1A" alt="Floregen">
+    <h2>Floregen Sarno</h2>
+    <p>Full Stack Developer in Training</p>
+    <button id="aboutBtn">ABOUT ME</button>
+    <div id="info">
+      <p>I’m a dedicated IT student passionate about innovation and clean design.</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById("aboutBtn").addEventListener("click", ()=>{
+      const info = document.getElementById("info");
+      info.style.display = info.style.display === "block" ? "none" : "block";
+    });
+  </script>
+</body>
+</html>
