@@ -1,62 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Hover Card</title>
+  <title>Activity 2</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: #f2f2f2;
-      font-family: Arial, sans-serif;
+      height: 100vh;
     }
 
-    .card {
-      width: 250px;
+    .profile {
       text-align: center;
-      background: #fff;
+      background: white;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      width: 350px;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    }
-
-    .card img {
+    .profile img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    .card p {
+    button {
       margin-top: 15px;
-      color: #333;
-      line-height: 1.4;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 0.3s ease, max-height 0.3s ease;
+      padding: 10px 20px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
-    .card:hover p {
-      opacity: 1;
-      max-height: 100px; /* enough height for text */
+    button:hover {
+      background: #45a049;
+    }
+
+    #info {
+      margin-top: 15px;
+    }
+
+    .hide {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="sarno.jpeg" alt="Sarno">
-    <p>Passionate about clean UI and accessible web experiences.</p>
+  <div class="profile">
+    <img src="sarno.jpeg" alt="HANNAH">
+    <h1>Floregen T. Sarno</h1>
+    <p>I am a Full Stack Developer based on PH.</p>
+
+    <button id="btn-aboutme">ABOUT ME</button>
+
+    <div id="info" class="hide">
+      <p>I am a self made programmer. My passion runs through my blood.</p>
+    </div>
   </div>
+
+  <script>
+    document.getElementById("btn-aboutme").addEventListener("click", function() {
+      const info = document.getElementById("info");
+      info.classList.toggle("hide");
+    });
+  </script>
 </body>
 </html>
