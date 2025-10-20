@@ -6,28 +6,64 @@
   <title>Lab 4 - Interactive Profile</title>
   <style>
     body {
-      display: flex; justify-content: center; align-items: center;
-      height: 100vh; background: #fff8f2; font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff8f2;
+      font-family: Arial;
     }
     .profile {
-      text-align: center; background: white;
-      border-radius: 15px; padding: 20px;
+      background: white;
+      border-radius: 50%;
+      width: 260px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 300px;
+      text-align: center;
+      padding: 20px;
     }
-    img { width: 120px; height: 120px; border-radius: 50%; }
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    h2 {
+      margin: 10px 0 5px;
+      font-size: 1.2em;
+    }
+    p {
+      margin: 0;
+      font-size: 0.9em;
+    }
     button {
-      background: #ff7f50; border: none; color: white;
-      padding: 10px 20px; border-radius: 8px;
-      cursor: pointer; margin-top: 10px;
+      background: #ff7f50;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
     }
-    button:hover { background: #ff6347; }
-    #info { display: none; margin-top: 10px; }
+    button:hover {
+      background: #ff6347;
+    }
+    #info {
+      display: none;
+      margin-top: 8px;
+      font-size: 0.85em;
+      color: #555;
+    }
   </style>
 </head>
 <body>
   <div class="profile">
-    <img src="sarno.jpeg" alt="Floregen">
+    <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-1/558827725_1985870832234516_6290776521658639026_n.jpg?_nc_cat=107&_nc_sid=e99d92&_nc_ohc=nZGsdAvCaNgQ7kNvwEwmyUY&_nc_ht=scontent.fcgy2-1.fna&oh=00_AfdqXpuxnblM9yJmAHya363M0QnekPCbDyq9ugy72dAN1w&oe=68F3AD1A" alt="Floregen">
     <h2>Floregen Sarno</h2>
     <p>Full Stack Developer in Training</p>
     <button id="aboutBtn">ABOUT ME</button>
@@ -36,7 +72,7 @@
     </div>
   </div>
   <script>
-    document.getElementById("aboutBtn").addEventListener("click", ()=>{
+    document.getElementById("aboutBtn").addEventListener("click", () => {
       const info = document.getElementById("info");
       info.style.display = info.style.display === "block" ? "none" : "block";
     });
